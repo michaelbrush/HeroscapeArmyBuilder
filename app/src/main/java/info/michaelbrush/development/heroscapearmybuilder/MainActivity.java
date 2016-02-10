@@ -26,6 +26,20 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
+    }
+
+    public void showDb(View view)
+    {
+//        HeroscapeDeck deck;
+//        deck = new HeroscapeDeck(getApplicationContext());
+//        TextView text = (TextView) findViewById(R.id.textView);
+//        text.setText(deck.getDatabaseName());
+//
+//        SQLiteDatabase db = deck.getReadableDatabase();
+//        db.
     }
 
     @Override
