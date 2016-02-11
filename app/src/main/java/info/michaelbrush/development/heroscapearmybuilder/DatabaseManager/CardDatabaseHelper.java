@@ -34,7 +34,7 @@ public class CardDatabaseHelper extends DatabaseHelper {
     //region Card Queries
     private static final String SQL_CREATE_CARD_TABLE =
             "CREATE TABLE " + CardEntry.TABLE_NAME + " (" +
-                    CardEntry._ID + " INTEGER PRIMARY KEY, " +
+                    CardEntry._ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
                     CardEntry.COLUMN_NAME_ATTACK + INT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_COST + INT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_DEFENSE + INT_TYPE + COMMA_SEP +
@@ -44,13 +44,13 @@ public class CardDatabaseHelper extends DatabaseHelper {
                     CardEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_RACE + TEXT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_RANGE + INT_TYPE + COMMA_SEP +
-                    CardEntry.COLUMN_NAME_SET_RELATIONSHIP + TEXT_TYPE + COMMA_SEP +
+                    CardEntry.COLUMN_NAME_SET_RELATIONSHIP + INT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_SPECIAL_ABILITIES + TEXT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_SIZE_CLASS + TEXT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_SIZE_DESIGNATION + INT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_CLASS + TEXT_TYPE + COMMA_SEP +
                     CardEntry.COLUMN_NAME_TRAIT + TEXT_TYPE + COMMA_SEP +
-                    CardEntry.COLUMN_NAME_TYPE + TEXT_TYPE + COMMA_SEP +
+                    CardEntry.COLUMN_NAME_TYPE + TEXT_TYPE  +
                     " )";
 
     private static final String SQL_DELETE_CARD_TABLE =
@@ -100,7 +100,7 @@ public class CardDatabaseHelper extends DatabaseHelper {
                 "adjacent to Finn with a range of 1 add 1 die to their normal attack, WARRIOR'S " +
                 "ATTACK SPIRIT 1: Whn Finn is destroyed, place this figure on any unique Army "
                 + "Card. Finn's Spirit adds 1 to the normal attack number on that card.");
-        data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, "Rise of the Valkyrie - Master Set");
+        data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, 1);
         data.put(CardEntry.COLUMN_NAME_IS_CUSTOM, 0);
 
         db.insert(CardEntry.TABLE_NAME, null, data);

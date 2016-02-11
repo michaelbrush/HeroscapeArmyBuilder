@@ -19,7 +19,7 @@ public class ArmyCardsDatabaseHelper extends DatabaseHelper {
     private static final String SQL_CREATE_ARMY_CARDS_TABLE =
             "CREATE TABLE " + ArmyCardsEntry.TABLE_NAME + " (" +
                     ArmyCardsEntry.COLUMN_NAME_USER_ID + INT_TYPE + COMMA_SEP +
-                    ArmyCardsEntry.COLUMN_NAME_USER_ID +
+                    ArmyCardsEntry.COLUMN_NAME_USER_ID + INT_TYPE +
                     " )";
 
     private static final String SQL_DELETE_ARMY_CARDS_TABLE =

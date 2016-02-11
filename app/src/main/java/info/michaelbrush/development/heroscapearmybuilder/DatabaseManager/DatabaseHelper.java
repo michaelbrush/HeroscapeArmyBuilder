@@ -12,7 +12,7 @@ public abstract class DatabaseHelper extends SQLiteOpenHelper {
     protected static final String TEXT_TYPE = " TEXT";
     protected static final String INT_TYPE = " INT";
     protected static final String REAL_TYPE = " REAL";
-    protected static final String COMMA_SEP = ",";
+    protected static final String COMMA_SEP = ", ";
 
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "HeroscapeDeck.db";

@@ -19,7 +19,7 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     //region Army
     private static final String SQL_CREATE_ARMY_TABLE =
             "CREATE TABLE " + ArmyEntry.TABLE_NAME + " (" +
-                    ArmyEntry._ID + " INTEGER PRIMARY KEY, " +
+                    ArmyEntry._ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
                     ArmyEntry.COLUMN_NAME_USER_ID + TEXT_TYPE +
                     " )";
 

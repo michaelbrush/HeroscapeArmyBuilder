@@ -18,7 +18,7 @@ public final class UserDatabaseHelper extends DatabaseHelper {
     //region User
     private static final String SQL_CREATE_USER_TABLE =
             "CREATE TABLE " + UserEntry.TABLE_NAME + " (" +
-                    UserEntry._ID + " INTEGER PRIMARY KEY, " +
+                    UserEntry._ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
                     UserEntry.COLUMN_NAME_USER_NAME + TEXT_TYPE +
                     " )";
 

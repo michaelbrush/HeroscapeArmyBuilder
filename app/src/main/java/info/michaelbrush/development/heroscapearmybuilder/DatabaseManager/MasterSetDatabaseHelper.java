@@ -19,8 +19,8 @@ public class MasterSetDatabaseHelper extends DatabaseHelper
     //region MasterSet
     private static final String SQL_CREATE_MASTER_SET_TABLE =
             "CREATE TABLE " + MasterSetEntry.TABLE_NAME + " (" +
-                    MasterSetEntry._ID + " INTEGER PRIMARY KEY, " +
-                    MasterSetEntry.COLUMN_NAME_SET_NAME +
+                    MasterSetEntry._ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
+                    MasterSetEntry.COLUMN_NAME_SET_NAME + TEXT_TYPE +
                     " )";
 
     private static final String SQL_DELETE_MASTER_SET_TABLE =
