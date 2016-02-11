@@ -1,5 +1,6 @@
 package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
@@ -23,6 +24,7 @@ public final class UserDatabaseHelper extends DatabaseHelper {
 
     private static final String SQL_DELETE_USER_TABLE =
             "DROP TABLE IF EXISTS " + UserEntry.TABLE_NAME;
+
     //endregion
 
     public  static abstract class UserEntry implements BaseColumns
@@ -34,6 +36,7 @@ public final class UserDatabaseHelper extends DatabaseHelper {
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL(SQL_CREATE_USER_TABLE);
+        initData(db);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
@@ -45,5 +48,14 @@ public final class UserDatabaseHelper extends DatabaseHelper {
     public void onDelete(SQLiteDatabase db)
     {
         db.execSQL(SQL_DELETE_USER_TABLE);
+    }
+
+    public void initData(SQLiteDatabase db)
+    {
+        ContentValues data = new ContentValues();
+
+        data.put(UserEntry.COLUMN_NAME_USER_NAME, "Test User");
+
+        db.insert(UserEntry.TABLE_NAME, null, data);
     }
 }

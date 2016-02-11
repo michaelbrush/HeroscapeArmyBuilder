@@ -1,5 +1,6 @@
 package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
@@ -46,5 +47,14 @@ public class MasterSetDatabaseHelper extends DatabaseHelper
     public void onDelete(SQLiteDatabase db)
     {
         db.execSQL(SQL_DELETE_MASTER_SET_TABLE);
+    }
+
+    public void initData(SQLiteDatabase db)
+    {
+        ContentValues data = new ContentValues();
+
+        data.put(MasterSetEntry.COLUMN_NAME_SET_NAME, "Rise of the Valkyrie - Master Set");
+
+        db.insert(MasterSetEntry.TABLE_NAME, null, data);
     }
 }

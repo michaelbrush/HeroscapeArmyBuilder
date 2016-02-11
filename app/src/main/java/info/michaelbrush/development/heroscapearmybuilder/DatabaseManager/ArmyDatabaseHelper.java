@@ -1,5 +1,6 @@
 package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
@@ -36,6 +37,7 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL(SQL_CREATE_ARMY_TABLE);
+        initData(db);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
@@ -47,5 +49,15 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     public void onDelete(SQLiteDatabase db)
     {
         db.execSQL(SQL_DELETE_ARMY_TABLE);
+    }
+
+    public void initData(SQLiteDatabase db)
+    {
+        ContentValues data = new ContentValues();
+
+        data.put(ArmyEntry.COLUMN_NAME_POINT_TOTAL, 200);
+        data.put(ArmyEntry.COLUMN_NAME_USER_ID, 1);
+
+        db.insert(ArmyEntry.TABLE_NAME, null, data);
     }
 }
