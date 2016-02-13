@@ -1,6 +1,7 @@
 package info.michaelbrush.development.heroscapearmybuilder;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -24,37 +25,49 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    }
 
+    public void onClick(View view)
+    {
+        switch(view.getId())
+        {
+            case(R.id.buttonArmies):
 
+                break;
+            case(R.id.buttonCards):
+                Intent intent = new Intent(this, CardListActivity.class);
+                startActivity(intent);
+                break;
+            case(R.id.buttonDeck):
 
+                break;
+            case(R.id.buttonUsers):
+
+                break;
+            case(R.id.buttonDelete):
+                CardDatabaseHelper cards = new CardDatabaseHelper(getApplicationContext());
+                cards.onUpgrade(cards.getWritableDatabase(), 1, 1);
+                break;
+        }
     }
 
     public void showDb(View view)
     {
 //        HeroscapeDeck deck;
 //        deck = new HeroscapeDeck(getApplicationContext());
-        TextView text = (TextView) findViewById(R.id.textView2);
+//        TextView text = (TextView) findViewById(R.id.textView2);
 //        text.setText(deck.getDatabaseName());
 //
 //        SQLiteDatabase db = deck.getReadableDatabase();
 //        db.
 
-        CardDatabaseHelper cardDB = new CardDatabaseHelper(getApplicationContext());
-        String qry = "SELECT name FROM Cards where _ID = 1";
-        SQLiteDatabase db = cardDB.getReadableDatabase();
-        Cursor result = db.rawQuery(qry, null);
-        result.moveToFirst();
-        text.setText(result.getString(0));
-
-        db.close();
+//        CardDatabaseHelper cardDB = new CardDatabaseHelper(getApplicationContext());
+//        String qry = "SELECT name FROM Cards where _ID = 1";
+//        SQLiteDatabase db = cardDB.getReadableDatabase();
+//        Cursor result = db.rawQuery(qry, null);
+//        result.moveToFirst();
+////        text.setText(result.getString(0));
+//        db.close();
 
     }
 

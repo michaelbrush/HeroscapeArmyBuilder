@@ -2,8 +2,13 @@ package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * Created by Michael Brush on 2/7/2016.
@@ -83,6 +88,7 @@ public class CardDatabaseHelper extends DatabaseHelper {
     {
         ContentValues data = new ContentValues();
 
+        //region Cards
         data.put(CardEntry.COLUMN_NAME_NAME, "Fin the Viking Champion");
         data.put(CardEntry.COLUMN_NAME_RACE, "Human");
         data.put(CardEntry.COLUMN_NAME_TYPE, "Unique Hero");
@@ -102,7 +108,86 @@ public class CardDatabaseHelper extends DatabaseHelper {
                 + "Card. Finn's Spirit adds 1 to the normal attack number on that card.");
         data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, 1);
         data.put(CardEntry.COLUMN_NAME_IS_CUSTOM, 0);
-
         db.insert(CardEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(CardEntry.COLUMN_NAME_NAME, "Airborne Elite");
+        data.put(CardEntry.COLUMN_NAME_RACE, "Human");
+        data.put(CardEntry.COLUMN_NAME_TYPE, "Unique Squad");
+        data.put(CardEntry.COLUMN_NAME_CLASS, "Soldiers");
+        data.put(CardEntry.COLUMN_NAME_TRAIT, "Disciplined");
+        data.put(CardEntry.COLUMN_NAME_SIZE_CLASS, "Medium");
+        data.put(CardEntry.COLUMN_NAME_SIZE_DESIGNATION, 5);
+        data.put(CardEntry.COLUMN_NAME_LIFE, 1);
+        data.put(CardEntry.COLUMN_NAME_MOVE, 4);
+        data.put(CardEntry.COLUMN_NAME_RANGE, 8);
+        data.put(CardEntry.COLUMN_NAME_ATTACK, 3);
+        data.put(CardEntry.COLUMN_NAME_DEFENSE, 1);
+        data.put(CardEntry.COLUMN_NAME_COST, 110);
+        data.put(CardEntry.COLUMN_NAME_SPECIAL_ABILITIES, "GRENADE SPECIAL ATTACK|THE DROP");
+        data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, 1);
+        data.put(CardEntry.COLUMN_NAME_IS_CUSTOM, 0);
+        db.insert(CardEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(CardEntry.COLUMN_NAME_NAME, "Deathwalker 9000");
+        data.put(CardEntry.COLUMN_NAME_RACE, "Soulborg");
+        data.put(CardEntry.COLUMN_NAME_TYPE, "Unique Hero");
+        data.put(CardEntry.COLUMN_NAME_CLASS, "Deathwalker");
+        data.put(CardEntry.COLUMN_NAME_TRAIT, "Precise");
+        data.put(CardEntry.COLUMN_NAME_SIZE_CLASS, "Large");
+        data.put(CardEntry.COLUMN_NAME_SIZE_DESIGNATION, 7);
+        data.put(CardEntry.COLUMN_NAME_LIFE, 1);
+        data.put(CardEntry.COLUMN_NAME_MOVE, 5);
+        data.put(CardEntry.COLUMN_NAME_RANGE, 7);
+        data.put(CardEntry.COLUMN_NAME_ATTACK, 4);
+        data.put(CardEntry.COLUMN_NAME_DEFENSE, 9);
+        data.put(CardEntry.COLUMN_NAME_COST, 140);
+        data.put(CardEntry.COLUMN_NAME_SPECIAL_ABILITIES, "EXPLOSION SPECIAL ATTACK|RANGE ENHANCEMENT");
+        data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, 1);
+        data.put(CardEntry.COLUMN_NAME_IS_CUSTOM, 0);
+        db.insert(CardEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(CardEntry.COLUMN_NAME_NAME, "Grimnak");
+        data.put(CardEntry.COLUMN_NAME_RACE, "Orc");
+        data.put(CardEntry.COLUMN_NAME_TYPE, "Unique Hero");
+        data.put(CardEntry.COLUMN_NAME_CLASS, "Champion");
+        data.put(CardEntry.COLUMN_NAME_TRAIT, "Ferocious");
+        data.put(CardEntry.COLUMN_NAME_SIZE_CLASS, "Huge");
+        data.put(CardEntry.COLUMN_NAME_SIZE_DESIGNATION, 11);
+        data.put(CardEntry.COLUMN_NAME_LIFE, 5);
+        data.put(CardEntry.COLUMN_NAME_MOVE, 5);
+        data.put(CardEntry.COLUMN_NAME_RANGE, 1);
+        data.put(CardEntry.COLUMN_NAME_ATTACK, 2);
+        data.put(CardEntry.COLUMN_NAME_DEFENSE, 4);
+        data.put(CardEntry.COLUMN_NAME_COST, 120);
+        data.put(CardEntry.COLUMN_NAME_SPECIAL_ABILITIES, "CHOMP|ORC WARRIOR ENHANCEMENT");
+        data.put(CardEntry.COLUMN_NAME_SET_RELATIONSHIP, 1);
+        data.put(CardEntry.COLUMN_NAME_IS_CUSTOM, 0);
+        db.insert(CardEntry.TABLE_NAME, null, data);
+        //endregion
+
+
     }
+
+//    public void initFromFile(SQLiteDatabase db, Context context)
+//    {
+//        AssetManager manager = context.getAssets();
+//        InputStream open = null;
+//        try
+//        {
+//            open = manager.open("cards.tsv");
+//            InputStreamReader streamReader = new InputStreamReader(open);
+//            CSVReader csvReader = new CSVReader(streamReader);
+//            String[] line;
+//
+//            csvReader.readNext();
+//        }
+//        catch (IOException e)
+//        {
+//            e.printStackTrace();
+//        }
+//
+//    }
 }
