@@ -29,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view)
     {
+        Intent intent;
         switch(view.getId())
         {
             case(R.id.buttonArmies):
-
+                intent = new Intent(this, ArmyListActivity.class);
+                startActivity(intent);
                 break;
             case(R.id.buttonCards):
-                Intent intent = new Intent(this, CardListActivity.class);
+                intent = new Intent(this, CardListActivity.class);
                 startActivity(intent);
                 break;
             case(R.id.buttonDeck):

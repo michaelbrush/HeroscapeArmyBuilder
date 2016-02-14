@@ -20,7 +20,9 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     private static final String SQL_CREATE_ARMY_TABLE =
             "CREATE TABLE " + ArmyEntry.TABLE_NAME + " (" +
                     ArmyEntry._ID + " INTEGER PRIMARY KEY" + COMMA_SEP +
-                    ArmyEntry.COLUMN_NAME_USER_ID + TEXT_TYPE +
+                    ArmyEntry.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
+                    ArmyEntry.COLUMN_NAME_POINT_TOTAL + INT_TYPE + COMMA_SEP +
+                    ArmyEntry.COLUMN_NAME_USER_ID + INT_TYPE +
                     " )";
 
     private static final String SQL_DELETE_ARMY_TABLE =
@@ -30,6 +32,7 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     public static abstract class ArmyEntry implements BaseColumns
     {
         public static final String TABLE_NAME = "Armies";
+        public static final String COLUMN_NAME_NAME = "name";
         public static final String COLUMN_NAME_USER_ID = "userId";
         public static final String COLUMN_NAME_POINT_TOTAL = "pointTotal";
     }
@@ -55,9 +58,21 @@ public final class ArmyDatabaseHelper extends DatabaseHelper
     {
         ContentValues data = new ContentValues();
 
+        data.put(ArmyEntry.COLUMN_NAME_NAME, "Test Army 1");
         data.put(ArmyEntry.COLUMN_NAME_POINT_TOTAL, 200);
         data.put(ArmyEntry.COLUMN_NAME_USER_ID, 1);
+        db.insert(ArmyEntry.TABLE_NAME, null, data);
 
+        data.clear();
+        data.put(ArmyEntry.COLUMN_NAME_NAME, "Test Army 2");
+        data.put(ArmyEntry.COLUMN_NAME_POINT_TOTAL, 50);
+        data.put(ArmyEntry.COLUMN_NAME_USER_ID, 1);
+        db.insert(ArmyEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyEntry.COLUMN_NAME_NAME, "Test Army 3");
+        data.put(ArmyEntry.COLUMN_NAME_POINT_TOTAL, 400);
+        data.put(ArmyEntry.COLUMN_NAME_USER_ID, 2);
         db.insert(ArmyEntry.TABLE_NAME, null, data);
     }
 }
