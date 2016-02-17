@@ -37,7 +37,12 @@ public class CardContent {
                     {
                         CardDatabaseHelper.CardEntry._ID,
                         CardDatabaseHelper.CardEntry.COLUMN_NAME_NAME,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_SPECIAL_ABILITIES
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_COST,
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_ATTACK,
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_DEFENSE,
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_MOVE,
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_LIFE,
+                        CardDatabaseHelper.CardEntry.COLUMN_NAME_RANGE,
                     },
                 null, null, null, null, null);
 
@@ -45,7 +50,7 @@ public class CardContent {
 
         while(!allCards.isAfterLast())
         {
-            newCard = new CardItem(allCards.getString(0), allCards.getString(1), allCards.getString(2));
+            newCard = new CardItem(allCards.getString(0), allCards.getString(1), allCards.getInt(2), allCards.getInt(3), allCards.getInt(4), allCards.getInt(5), allCards.getInt(6), allCards.getInt(7));
             addItem(newCard);
             allCards.moveToNext();
         }
@@ -57,36 +62,33 @@ public class CardContent {
         ITEM_MAP.put(item.id, item);
     }
 
-    private CardItem createCardItem(int position) {
-        return new CardItem(String.valueOf(position), "Item " + position, makeDetails(position));
-    }
-
-    private String makeDetails(int position) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
-        return builder.toString();
-    }
-
     /**
      * A dummy item representing a piece of content.
      */
     public class CardItem {
         public final String id;
-        public final String content;
-        public final String details;
+        public final String name;
+        public final int cost;
+        public final int attack;
+        public final int defense;
+        public final int move;
+        public final int life;
+        public final int range;
 
-        public CardItem(String id, String content, String details) {
+        public CardItem(String id, String name, int cost, int attack, int defense, int move, int life, int range) {
             this.id = id;
-            this.content = content;
-            this.details = details;
+            this.name = name;
+            this.cost = cost;
+            this.attack = attack;
+            this.defense = defense;
+            this.move = move;
+            this.life = life;
+            this.range = range;
         }
 
         @Override
         public String toString() {
-            return content;
+            return name;
         }
     }
 }

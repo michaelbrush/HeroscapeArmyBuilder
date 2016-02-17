@@ -1,18 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:weightSum="5"
+    android:baselineAligned="false">
 
-    <TextView
-        android:id="@+id/id"
-        android:layout_width="wrap_content"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:weightSum="4"
+        android:layout_weight="2"
+        android:layout_gravity="center_vertical">
 
-    <CheckBox
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layoutDirection="rtl"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/bubble_margin"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginTop="@dimen/text_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:layout_weight="3"/>
+
+        <TextView
+            android:id="@+id/cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:background="@drawable/sm_cost_c"
+            android:layout_gravity="left|center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/lg_bubble_text" />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        android:layout_weight="3"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/life"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:background="@drawable/sm_life_c"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/sm_bubble_text" />
+
+        <TextView
+            android:id="@+id/move"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColorHighlight="#084b16"
+            android:background="@drawable/sm_move_c"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/sm_bubble_text" />
+
+        <TextView
+            android:id="@+id/range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColorHighlight="#787777"
+            android:background="@drawable/sm_range_c"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/sm_bubble_text" />
+
+        <TextView
+            android:id="@+id/attack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColorHighlight="#f90e0e"
+            android:background="@drawable/sm_attack_c"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/sm_bubble_text" />
+
+        <TextView
+            android:id="@+id/defense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/bubble_margin"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textColorHighlight="#151fdc"
+            android:background="@drawable/sm_defense_c"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:layout_weight="1"
+            android:textSize="@dimen/sm_bubble_text" />
+
+        </LinearLayout>
+
 </LinearLayout>

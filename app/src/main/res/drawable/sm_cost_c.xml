@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/colorCost" />
+    <corners
+        android:topLeftRadius="@dimen/lg_bubble_corner"
+        android:topRightRadius="@dimen/lg_bubble_corner"
+        android:bottomLeftRadius="@dimen/lg_bubble_corner"
+        android:bottomRightRadius="@dimen/lg_bubble_corner"
+        />
+    <size
+        android:height="@dimen/lg_bubble_rad"
+        android:width="@dimen/lg_bubble_rad"/>
+</shape>

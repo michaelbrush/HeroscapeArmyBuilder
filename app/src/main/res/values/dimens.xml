@@ -6,4 +6,11 @@
     <dimen name="app_bar_height">200dp</dimen>
     <dimen name="item_width">200dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="bubble_margin">4dp</dimen>
+    <dimen name="sm_bubble_rad">20dp</dimen>
+    <dimen name="lg_bubble_rad">30dp</dimen>
+    <dimen name="sm_bubble_corner">15dp</dimen>
+    <dimen name="lg_bubble_corner">30dp</dimen>
+    <dimen name="sm_bubble_text">10dp</dimen>
+    <dimen name="lg_bubble_text">15dp</dimen>
 </resources>

@@ -59,7 +59,7 @@ public class ArmyDetailActivity extends AppCompatActivity {
             ArmyDetailFragment fragment = new ArmyDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.army_detail_container, fragment)
+                    .add(R.id.detail_toolbar, fragment)
                     .commit();
         }
     }

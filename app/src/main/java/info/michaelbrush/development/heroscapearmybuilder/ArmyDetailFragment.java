@@ -61,7 +61,7 @@ public class ArmyDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.army_detail)).setText(mItem.pointTotal);
+            ((TextView) rootView.findViewById(R.id.army_detail)).setText(mItem.name + " " + mItem.pointTotal);
         }
 
         return rootView;

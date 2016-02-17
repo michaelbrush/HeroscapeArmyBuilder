@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorAttack">#ec0909</color>
+    <color name="colorDefense">#151fdc</color>
+    <color name="colorLife">#b42626</color>
+    <color name="colorMove">#084b16</color>
+    <color name="colorRange">#787777</color>
+    <color name="colorCost">#3e3e3e</color>
 </resources>

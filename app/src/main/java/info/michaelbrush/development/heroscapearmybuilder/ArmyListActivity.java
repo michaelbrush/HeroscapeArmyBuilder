@@ -109,7 +109,7 @@ public class ArmyListActivity extends AppCompatActivity {
                         ArmyDetailFragment fragment = new ArmyDetailFragment();
                         fragment.setArguments(arguments);
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.army_detail_container, fragment)
+                                .replace(R.id.detail_toolbar, fragment)
                                 .commit();
                     } else {
                         Context context = v.getContext();

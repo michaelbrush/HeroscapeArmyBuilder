@@ -2,7 +2,6 @@ package info.michaelbrush.development.heroscapearmybuilder;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -87,8 +86,13 @@ public class CardListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
-            holder.mIdView.setText(mValues.get(position).id);
-            holder.mContentView.setText(mValues.get(position).content);
+            holder.mNameView.setText(mValues.get(position).name);
+            holder.mCostView.setText(Integer.toString(mValues.get(position).cost));
+            holder.mDefenseView.setText(Integer.toString(mValues.get(position).defense));
+            holder.mAttackView.setText(Integer.toString(mValues.get(position).attack));
+            holder.mMoveView.setText(Integer.toString(mValues.get(position).move));
+            holder.mLifeView.setText(Integer.toString(mValues.get(position).life));
+            holder.mRangeView.setText(Integer.toString(mValues.get(position).range));
 
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -119,20 +123,30 @@ public class CardListActivity extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             public final View mView;
-            public final TextView mIdView;
-            public final TextView mContentView;
+            public final TextView mNameView;
+            public final TextView mCostView;
+            public final TextView mLifeView;
+            public final TextView mAttackView;
+            public final TextView mDefenseView;
+            public final TextView mRangeView;
+            public final TextView mMoveView;
             public CardContent.CardItem mItem;
 
             public ViewHolder(View view) {
                 super(view);
                 mView = view;
-                mIdView = (TextView) view.findViewById(R.id.id);
-                mContentView = (TextView) view.findViewById(R.id.id);
+                mNameView = (TextView) view.findViewById(R.id.name);
+                mCostView = (TextView) view.findViewById(R.id.cost);
+                mLifeView = (TextView) view.findViewById(R.id.life);
+                mAttackView = (TextView) view.findViewById(R.id.attack);
+                mDefenseView = (TextView) view.findViewById(R.id.defense);
+                mMoveView = (TextView) view.findViewById(R.id.move);
+                mRangeView = (TextView) view.findViewById(R.id.range);
             }
 
             @Override
             public String toString() {
-                return super.toString() + " '" + mContentView.getText() + "'";
+                return super.toString() + " '" + mCostView.getText() + "'";
             }
         }
     }

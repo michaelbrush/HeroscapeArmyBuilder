@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 import java.io.IOException;
@@ -13,7 +14,16 @@ import java.io.InputStreamReader;
 /**
  * Created by Michael Brush on 2/7/2016.
  */
-public class CardDatabaseHelper extends DatabaseHelper {
+public class CardDatabaseHelper extends SQLiteOpenHelper {
+
+    //helper constants for defining sql statements
+    protected static final String TEXT_TYPE = " TEXT";
+    protected static final String INT_TYPE = " INT";
+    protected static final String REAL_TYPE = " REAL";
+    protected static final String COMMA_SEP = ", ";
+
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "Card.db";
 
     public static abstract class CardEntry implements BaseColumns
     {
@@ -64,7 +74,7 @@ public class CardDatabaseHelper extends DatabaseHelper {
 
     public CardDatabaseHelper(Context context)
     {
-        super(context);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     public void onCreate(SQLiteDatabase db)
@@ -89,7 +99,7 @@ public class CardDatabaseHelper extends DatabaseHelper {
         ContentValues data = new ContentValues();
 
         //region Cards
-        data.put(CardEntry.COLUMN_NAME_NAME, "Fin the Viking Champion");
+        data.put(CardEntry.COLUMN_NAME_NAME, "Finn the Viking Champion");
         data.put(CardEntry.COLUMN_NAME_RACE, "Human");
         data.put(CardEntry.COLUMN_NAME_TYPE, "Unique Hero");
         data.put(CardEntry.COLUMN_NAME_CLASS, "Champion");

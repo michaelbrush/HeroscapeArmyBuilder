@@ -3,23 +3,33 @@ package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 /**
  * Created by Michael Brush on 2/7/2016.
  */
-public class ArmyCardsDatabaseHelper extends DatabaseHelper {
+public class ArmyCardsDatabaseHelper extends SQLiteOpenHelper {
+
+    //helper constants for defining sql statements
+    protected static final String TEXT_TYPE = " TEXT";
+    protected static final String INT_TYPE = " INT";
+    protected static final String REAL_TYPE = " REAL";
+    protected static final String COMMA_SEP = ", ";
+
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "ArmyCards.db";
 
     public ArmyCardsDatabaseHelper(Context context)
     {
-        super(context);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     //region ArmyCards
     private static final String SQL_CREATE_ARMY_CARDS_TABLE =
             "CREATE TABLE " + ArmyCardsEntry.TABLE_NAME + " (" +
-                    ArmyCardsEntry.COLUMN_NAME_USER_ID + INT_TYPE + COMMA_SEP +
-                    ArmyCardsEntry.COLUMN_NAME_USER_ID + INT_TYPE +
+                    ArmyCardsEntry.COLUMN_NAME_ARMY_ID + INT_TYPE + COMMA_SEP +
+                    ArmyCardsEntry.COLUMN_NAME_CARD_ID + INT_TYPE +
                     " )";
 
     private static final String SQL_DELETE_ARMY_CARDS_TABLE =
@@ -30,7 +40,7 @@ public class ArmyCardsDatabaseHelper extends DatabaseHelper {
     {
         public static final String TABLE_NAME = "ArmyCards";
         public static final String COLUMN_NAME_ARMY_ID = "armyId";
-        public static final String COLUMN_NAME_USER_ID = "CardId";
+        public static final String COLUMN_NAME_CARD_ID = "CardId";
     }
 
     public void onCreate(SQLiteDatabase db)
@@ -54,8 +64,37 @@ public class ArmyCardsDatabaseHelper extends DatabaseHelper {
         ContentValues data = new ContentValues();
 
         data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 1);
-        data.put(ArmyCardsEntry.COLUMN_NAME_USER_ID, 1);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 1);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
 
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 1);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 2);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 1);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 3);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 1);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 4);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 2);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 2);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 2);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 3);
+        db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
+
+        data.clear();
+        data.put(ArmyCardsEntry.COLUMN_NAME_ARMY_ID, 3);
+        data.put(ArmyCardsEntry.COLUMN_NAME_CARD_ID, 4);
         db.insert(ArmyCardsEntry.TABLE_NAME, null, data);
     }
 }
