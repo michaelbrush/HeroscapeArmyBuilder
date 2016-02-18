@@ -61,7 +61,12 @@ public class CardDetailFragment extends Fragment {
 
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
-            ((TextView) rootView.findViewById(R.id.card_detail)).setText(Integer.toString(mItem.cost));
+            ((TextView) rootView.findViewById(R.id.card_detail_life_value)).setText((Integer.toString(mItem.life)));
+            ((TextView) rootView.findViewById(R.id.card_detail_range_value)).setText((Integer.toString(mItem.range)));
+            ((TextView) rootView.findViewById(R.id.card_detail_attack_value)).setText((Integer.toString(mItem.attack)));
+            ((TextView) rootView.findViewById(R.id.card_detail_defense_value)).setText((Integer.toString(mItem.defense)));
+            ((TextView) rootView.findViewById(R.id.card_detail_move_value)).setText((Integer.toString(mItem.move)));
+            ((TextView) rootView.findViewById(R.id.card_detail_cost_value)).setText((Integer.toString(mItem.cost)));
         }
 
         return rootView;

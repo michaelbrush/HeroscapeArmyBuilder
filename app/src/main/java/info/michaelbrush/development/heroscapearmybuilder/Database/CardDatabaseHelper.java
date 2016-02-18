@@ -1,15 +1,10 @@
-package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
+package info.michaelbrush.development.heroscapearmybuilder.Database;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 /**
  * Created by Michael Brush on 2/7/2016.

@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 
 import info.michaelbrush.development.heroscapearmybuilder.Armies.ArmyContent;
-import info.michaelbrush.development.heroscapearmybuilder.DatabaseManager.ArmyDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.ArmyDatabaseHelper;
 
 import java.util.List;
 

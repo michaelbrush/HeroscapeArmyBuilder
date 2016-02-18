@@ -13,4 +13,5 @@
     <dimen name="lg_bubble_corner">30dp</dimen>
     <dimen name="sm_bubble_text">10dp</dimen>
     <dimen name="lg_bubble_text">15dp</dimen>
+    <dimen name="card_detail_banner_height">150dp</dimen>
 </resources>

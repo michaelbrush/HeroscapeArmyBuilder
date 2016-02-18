@@ -1,4 +1,4 @@
-package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
+package info.michaelbrush.development.heroscapearmybuilder.Database;
 
 import android.content.ContentValues;
 import android.content.Context;

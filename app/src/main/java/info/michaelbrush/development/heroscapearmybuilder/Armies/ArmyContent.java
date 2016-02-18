@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import info.michaelbrush.development.heroscapearmybuilder.DatabaseManager.ArmyDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.ArmyDatabaseHelper;
 
 /**
  * Helper class for providing sample content for user interfaces created by

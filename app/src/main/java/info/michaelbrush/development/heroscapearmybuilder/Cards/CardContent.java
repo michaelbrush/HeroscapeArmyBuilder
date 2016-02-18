@@ -1,6 +1,5 @@
 package info.michaelbrush.development.heroscapearmybuilder.Cards;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -9,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import info.michaelbrush.development.heroscapearmybuilder.DatabaseManager.CardDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.CardDatabaseHelper;
 
 /**
  * Helper class for providing sample content for user interfaces created by

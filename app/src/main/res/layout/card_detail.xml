@@ -1,9 +1,225 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/card_detail"
-    style="?android:attr/textAppearanceLarge"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:textIsSelectable="true"
-    tools:context="info.michaelbrush.development.heroscapearmybuilder.CardDetailFragment" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Defense"
+                android:id="@+id/card_detail_defense_title"
+                android:layout_column="0"
+                android:background="@color/colorDefense"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_defense_value"
+                android:layout_gravity="right"
+                android:layout_column="1"
+                android:background="@color/colorDefense"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Attack"
+                android:id="@+id/card_detail_attack_title"
+                android:layout_column="3"
+                android:textColor="#ffffff"
+                android:background="@color/colorAttack" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_attack_value"
+                android:layout_gravity="right"
+                android:layout_column="4"
+                android:textColor="#ffffff"
+                android:background="@color/colorAttack" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Move"
+                android:id="@+id/card_detail_move_title"
+                android:layout_column="0"
+                android:background="@color/colorMove"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_move_value"
+                android:layout_gravity="right"
+                android:layout_column="1"
+                android:background="@color/colorMove"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Range"
+                android:id="@+id/card_detail_range_title"
+                android:layout_column="3"
+                android:background="@color/colorRange"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_range_value"
+                android:layout_gravity="right"
+                android:layout_column="4"
+                android:background="@color/colorRange"
+                android:textColor="#ffffff" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Life"
+                android:id="@+id/card_detail_life_title"
+                android:layout_column="0"
+                android:background="@color/colorLife"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_life_value"
+                android:layout_gravity="right"
+                android:layout_column="1"
+                android:background="@color/colorLife"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Cost"
+                android:id="@+id/card_detail_cost_title"
+                android:layout_column="3"
+                android:background="@color/colorCost"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_cost_value"
+                android:layout_gravity="right"
+                android:layout_column="4"
+                android:background="@color/colorCost"
+                android:textColor="#ffffff" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Medium"
+                android:id="@+id/card_detail_size_class"
+                android:layout_column="0"
+                android:layout_span="3"
+                android:gravity="clip_horizontal|center_horizontal" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="10"
+                android:id="@+id/card_detail_size_value"
+                android:layout_gravity="right"
+                android:layout_column="4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="20px"
+                android:layout_column="3" />
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>
+<!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:id="@+id/card_detail"-->
+    <!--style="?android:attr/textAppearanceLarge"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:padding="16dp"-->
+    <!--android:textIsSelectable="true"-->
+    <!--tools:context="info.michaelbrush.development.heroscapearmybuilder.CardDetailFragment" />-->

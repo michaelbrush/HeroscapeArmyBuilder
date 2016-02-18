@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 
 import info.michaelbrush.development.heroscapearmybuilder.Cards.CardContent;
-import info.michaelbrush.development.heroscapearmybuilder.DatabaseManager.CardDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.CardDatabaseHelper;
 
 import java.util.List;
 

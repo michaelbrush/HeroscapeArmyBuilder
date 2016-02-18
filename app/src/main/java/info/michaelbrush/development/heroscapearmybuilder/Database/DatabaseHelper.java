@@ -1,4 +1,4 @@
-package info.michaelbrush.development.heroscapearmybuilder.DatabaseManager;
+package info.michaelbrush.development.heroscapearmybuilder.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
