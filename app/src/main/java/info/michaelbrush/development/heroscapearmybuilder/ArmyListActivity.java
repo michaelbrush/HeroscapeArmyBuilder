@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 
 import info.michaelbrush.development.heroscapearmybuilder.Armies.ArmyContent;
-import info.michaelbrush.development.heroscapearmybuilder.Database.ArmyDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.DatabaseHelper;
 
 import java.util.List;
 
@@ -69,7 +69,7 @@ public class ArmyListActivity extends AppCompatActivity {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
 
-        ArmyDatabaseHelper armyDB = new ArmyDatabaseHelper(getApplicationContext());
+        DatabaseHelper armyDB = new DatabaseHelper(getApplicationContext());
 
         ArmyContent items = new ArmyContent(armyDB.getReadableDatabase());
 

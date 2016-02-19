@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 
 import info.michaelbrush.development.heroscapearmybuilder.Cards.CardContent;
-import info.michaelbrush.development.heroscapearmybuilder.Database.CardDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.DatabaseHelper;
 
 import java.util.List;
 
@@ -58,7 +58,8 @@ public class CardListActivity extends AppCompatActivity {
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
 
-        CardDatabaseHelper cardDB = new CardDatabaseHelper(getApplicationContext());
+        DatabaseHelper cardDB = new DatabaseHelper(getApplicationContext()) {
+        };
 
         CardContent items = new CardContent(cardDB.getReadableDatabase());
 

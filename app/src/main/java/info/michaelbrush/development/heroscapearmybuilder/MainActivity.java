@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import info.michaelbrush.development.heroscapearmybuilder.Database.CardDatabaseHelper;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -40,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case(R.id.buttonUsers):
 
-                break;
-            case(R.id.buttonDelete):
-                CardDatabaseHelper cards = new CardDatabaseHelper(getApplicationContext());
-                cards.onUpgrade(cards.getWritableDatabase(), 1, 1);
                 break;
         }
     }

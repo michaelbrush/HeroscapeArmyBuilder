@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import info.michaelbrush.development.heroscapearmybuilder.Database.ArmyDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.DatabaseHelper;
 
 /**
  * Helper class for providing sample content for user interfaces created by
@@ -31,13 +31,13 @@ public class ArmyContent {
     {
         ITEMS.clear();
         ArmyItem newArmy;
-        Cursor allArmies = db.query(ArmyDatabaseHelper.ArmyEntry.TABLE_NAME,
+        Cursor allArmies = db.query(DatabaseHelper.ArmyColumns.TABLE_NAME,
                 new String[]
                         {
-                                ArmyDatabaseHelper.ArmyEntry._ID,
-                                ArmyDatabaseHelper.ArmyEntry.COLUMN_NAME_NAME,
-                                ArmyDatabaseHelper.ArmyEntry.COLUMN_NAME_POINT_TOTAL,
-                                ArmyDatabaseHelper.ArmyEntry.COLUMN_NAME_USER_ID
+                                DatabaseHelper.ArmyColumns._ID,
+                                DatabaseHelper.ArmyColumns.COLUMN_NAME_NAME,
+                                DatabaseHelper.ArmyColumns.COLUMN_NAME_POINT_TOTAL,
+                                DatabaseHelper.ArmyColumns.COLUMN_NAME_USER_ID
                         },
                 null, null, null, null, null);
 

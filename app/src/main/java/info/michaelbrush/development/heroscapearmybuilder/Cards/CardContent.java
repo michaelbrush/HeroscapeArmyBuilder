@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import info.michaelbrush.development.heroscapearmybuilder.Database.CardDatabaseHelper;
+import info.michaelbrush.development.heroscapearmybuilder.Database.DatabaseHelper;
 
 /**
  * Helper class for providing sample content for user interfaces created by
@@ -31,17 +31,17 @@ public class CardContent {
     {
         ITEMS.clear();
         CardItem newCard;
-        Cursor allCards = db.query(CardDatabaseHelper.CardEntry.TABLE_NAME,
+        Cursor allCards = db.query(DatabaseHelper.CardColumns.TABLE_NAME,
                 new String[]
                     {
-                        CardDatabaseHelper.CardEntry._ID,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_NAME,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_COST,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_ATTACK,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_DEFENSE,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_MOVE,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_LIFE,
-                        CardDatabaseHelper.CardEntry.COLUMN_NAME_RANGE,
+                        DatabaseHelper.CardColumns._ID,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_NAME,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_COST,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_ATTACK,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_DEFENSE,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_MOVE,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_LIFE,
+                        DatabaseHelper.CardColumns.COLUMN_NAME_RANGE,
                     },
                 null, null, null, null, null);
 
