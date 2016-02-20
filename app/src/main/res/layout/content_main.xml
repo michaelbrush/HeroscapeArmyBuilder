@@ -25,13 +25,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View Armies"
-        android:id="@+id/buttonArmies"
-        android:layout_below="@+id/buttonCards"
+        android:text="Search for Card"
+        android:id="@+id/buttonSearchCard"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:layout_below="@+id/buttonCards"
+        android:enabled="false"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Armies"
+        android:id="@+id/buttonArmies"
+        android:layout_below="@+id/buttonSearchCard"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:onClick="onClick"
+        android:enabled="false"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -42,7 +55,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:enabled="false"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -53,17 +67,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="10dp"
-        android:onClick="onClick" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete Database"
-        android:id="@+id/buttonDelete"
-        android:layout_below="@+id/buttonDeck"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:onClick="onClick" />
+        android:onClick="onClick"
+        android:enabled="false"/>
 
 </RelativeLayout>

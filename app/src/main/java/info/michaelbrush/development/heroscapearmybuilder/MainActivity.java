@@ -16,8 +16,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
     }
 
     public void onClick(View view)
@@ -26,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         switch(view.getId())
         {
             case(R.id.buttonArmies):
-                intent = new Intent(this, ArmyListActivity.class);
-                startActivity(intent);
+//                intent = new Intent(this, ArmyListActivity.class);
+//                startActivity(intent);
                 break;
             case(R.id.buttonCards):
                 intent = new Intent(this, CardListActivity.class);
@@ -39,27 +37,11 @@ public class MainActivity extends AppCompatActivity {
             case(R.id.buttonUsers):
 
                 break;
+            case(R.id.buttonSearchCard):
+//                intent = new Intent(this, SearchCard.class);
+//                startActivity(intent);
+                break;
         }
-    }
-
-    public void showDb(View view)
-    {
-//        HeroscapeDeck deck;
-//        deck = new HeroscapeDeck(getApplicationContext());
-//        TextView text = (TextView) findViewById(R.id.textView2);
-//        text.setText(deck.getDatabaseName());
-//
-//        SQLiteDatabase db = deck.getReadableDatabase();
-//        db.
-
-//        CardDatabaseHelper cardDB = new CardDatabaseHelper(getApplicationContext());
-//        String qry = "SELECT name FROM Cards where _ID = 1";
-//        SQLiteDatabase db = cardDB.getReadableDatabase();
-//        Cursor result = db.rawQuery(qry, null);
-//        result.moveToFirst();
-////        text.setText(result.getString(0));
-//        db.close();
-
     }
 
     @Override

@@ -34,7 +34,7 @@
         <activity
             android:name=".ArmyListActivity"
             android:label="@string/title_army_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ArmyDetailActivity"
             android:label="@string/title_army_detail"
